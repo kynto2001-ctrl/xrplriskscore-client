@@ -4,7 +4,9 @@
   "description": "Official Node.js client for the xrplriskscore.ai XRPL wallet risk scoring API. Handles x402 payment flow automatically.",
   "main": "src/index.js",
   "type": "commonjs",
-  "engines": { "node": ">=18" },
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
     "test": "node test/basic.test.js",
     "example": "node examples/quickstart.js"
@@ -25,10 +27,13 @@
   ],
   "author": "xrplriskscore.ai <contact@xrplriskscore.ai>",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "homepage": "https://xrplriskscore.ai",
   "repository": {
     "type": "git",
-    "url": "https://github.com/kynto2001-ctrl/xrplriskscore-client.git"
+    "url": "git+https://github.com/kynto2001-ctrl/xrplriskscore-client.git"
   },
   "dependencies": {
     "xrpl": "^4.0.0"
