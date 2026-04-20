@@ -38,6 +38,7 @@ Pass the family seed of a wallet with enough XRP to cover the per-request fee:
 | `rwaCheck(wallet)`            | 0.5 XRP   | RWA compliance check                        |
 | `credentialCheck(wallet)`     | 0.5 XRP   | Permissioned Domain credential screening    |
 | `escrowCheck(wallet)`         | 0.5 XRP   | XLS-85 escrow counterparty screening        |
+| `scoreBatch(wallets, opts?)`  | 8–40 XRP  | Batch 1–50 wallets, 20% off (tiered)        |
 | `demoScore(wallet)`           | Free      | Verdict only, 3/IP/24h                      |
 | `demoPrescore(wallet)`        | Free      | Verdict only, 3/IP/24h                      |
 | `demoRwaCheck(wallet)`        | Free      | Verdict only, 3/IP/24h                      |
@@ -66,7 +67,7 @@ call:
 3. Client builds an XRPL Payment tx embedding the invoiceId in a Memo, signs
    it with its seed, base64-encodes the envelope, and retries with an
    `X-PAYMENT` header.
-4. Server forwards to the t54 facilitator which verifies and settles on-chain.
+4. An x402 facilitator verifies the payment and settles on-chain.
 5. Server returns the scoring result.
 
 The client handles all of this transparently.
